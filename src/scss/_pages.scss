@@ -1,0 +1,60 @@
+.thanksgiving {
+
+	.img-wrapper {
+		img {
+
+		}
+	}
+
+	.services-list {
+		padding: 0;
+		margin: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		@include media-breakpoint-down(md) {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		li {
+			list-style-type: none;
+
+			&:last-child {
+				margin-left: 0;
+			}
+		}
+
+		.item {
+			display: flex;
+			align-items: center;
+			margin-left: $gap*2;
+			color: $gray-600;
+
+			&:hover {
+				color: $gray-900;
+			}
+
+			@include media-breakpoint-down(md) {
+				margin-left: 0;
+				margin-bottom: $gap;
+			}
+		}
+
+		.icon {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: $gap*3;
+			height: $gap*3;
+			background: $gray-100;
+			color: $success;
+			padding: 5px;
+			margin-left: $gap/2;
+			@include font-size(20px);
+			@include border-radius(3px);
+		}
+	} // .services-list
+
+} // .thanksgiving

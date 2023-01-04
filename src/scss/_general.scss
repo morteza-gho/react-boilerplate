@@ -1,0 +1,83 @@
+@import "bootstrap";
+@import 'variables';
+@import 'mixins';
+@import 'fonts';
+@import 'design-system';
+@import 'header';
+@import 'sidebar';
+
+html {
+	font-size: 16px;
+	height: 100%;
+}
+body {
+	font-family: 'IRAN_SANS_X';
+	font-size: 1rem;
+	font-weight: 400;
+	margin: 0;
+	padding: 0;
+	color: $gray-900;
+	background: $gray-100;
+	height: 100%;
+}
+
+a {
+	text-decoration: none;
+	@include transition();
+}
+
+.icon {
+	line-height: 0;
+}
+
+.tooltip {
+	@include font-size(12px);
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
+
+
+.ReactModalPortal {
+
+	.modal-overlay {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background:rgba(0, 0, 0, 0.5);
+
+		@include media-breakpoint-down(md) {
+			padding: $gap;
+		}
+	}
+
+	.modal-content {
+		background: #FFF;
+		@include border-radius($border_radius);
+
+		&.modal-sm {
+			width: 300px;
+		}
+		&.modal-md {
+			width: 500px;
+		}
+		&.modal-lg {
+			width: 800px;
+		}
+		&.modal-xl {
+			width: 1140px;
+		}
+
+		.modal-body {
+			padding: $gap;
+		}
+
+	} // .modal-content
+
+} // .ReactModalPortal

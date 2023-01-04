@@ -1,0 +1,243 @@
+#main-sidebar {
+	background: darken($gray-800, 5%);
+	width: $sidebar_width;
+	height: calc(100vh - (#{$header_height}));
+	position: fixed;
+	top: $header_height;
+	right: 0;
+	z-index: 99;
+	@include transition();
+
+	@include media-breakpoint-down(md) {
+		width: 80%;
+		height: calc(100vh - (#{$header_height} - 10px));
+		right: -100%;
+		top: calc(#{$header_height} - 10px);
+	}
+
+
+	.search-sidebar {
+		border-bottom: 2px solid $gray-800;
+		position: relative;
+
+		.input {
+			width: 100%;
+			border: none;
+			background: none;
+			padding: $gap/2 $gap;
+			color: $gray-500;
+			@include font-size(13px);
+
+			&:focus {
+				outline: none;
+			}
+
+			@include input-placeholder() {
+				color: $gray-500;
+			}
+		}
+
+		.icon {
+			color: $gray-600;
+			position: absolute;
+			top: $gap/2;
+			left: $gap;
+			@include font-size(16px);
+		}
+
+	} // .search-sidebar
+
+	::-webkit-scrollbar {
+		width: 2px;
+	}
+	::-webkit-scrollbar-thumb {
+		background: $success;
+	}
+
+	.content {
+		height: 100%;
+	}
+
+	.navigation {
+		direction: ltr;
+		overflow: auto;
+		height: 100%;
+		padding-bottom: 60px;
+
+		ul {
+			padding: 0;
+			margin: 0;
+			direction: rtl;
+
+			li {
+				list-style-type: none;
+				position: relative;
+
+				&.has-submenu {
+
+					&:after {
+						content: "";
+						font-family: 'bootstrap-icons';
+						width: 25px;
+						height: 25px;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						color: $gray-500;
+						position: absolute;
+						left: $gap/2;
+						top: calc(#{$gap} + 1px);
+						z-index: 9;
+						cursor: pointer;
+						transform: rotate(0);
+						@include transition();
+					}
+
+				} // &.has-submenu
+
+				&.active {
+					a {
+						border-left-color: $success;
+						color: $success;
+					}
+				}
+
+				&.open {
+					&:after {
+						transform: rotate(180deg);
+						top: 14px;
+					}
+					a {
+						border-bottom: none;
+					}
+				}
+
+				ul { // second ul
+					display: none;
+
+					&:hover {
+						&:before {
+							background: $success;
+						}
+					}
+
+					&:before {
+						content: '';
+						width: 2px;
+						height: calc(100% - #{$gap*4});
+						background: $gray-700;
+						position: absolute;
+						top: 62px;
+						right: $gap*2;
+						@include transition();
+					}
+
+
+					li { // second li
+
+						&.has-submenu {
+
+							&:after {
+								top: 8px;
+								color: $gray-500;
+								@include font-size(14px);
+							}
+
+						} // &.has-submenu
+
+						a { // second a
+							padding: 8px;
+							padding-right: $gap*3;
+							border-bottom: none;
+							@include font-size(12.5px);
+
+							&:hover {
+								color: $success;
+							}
+						}
+
+						.help-icon {
+							@include font-size(12px);
+						}
+
+						.text {
+							overflow: visible;
+							max-width: 100%;
+							text-overflow: initial;
+							white-space: initial;
+						}
+
+
+						ul { // third ul
+
+							&:before {
+								width: 2px;
+								height: calc(100% - 55px);
+								top: 48px;
+								right: $gap*4;
+							}
+
+							li { // third li
+
+								a { // third a
+									padding: $gap/2;
+									padding-right: $gap*5;
+									@include font-size(11.5px);
+								}
+
+							} // third li
+
+						} // third ul
+
+					} // second li
+
+				} // second ul
+
+			} // first li
+
+
+			a { // first a
+				display: flex;
+				align-items: center;
+				font-weight: 500;
+				color: $gray-500;
+				padding: $gap $gap/2;
+				border-bottom: 1px solid $gray-800;
+				//border-left: 3px solid transparent;
+				position: relative;
+				top: 2px;
+				z-index: 99;
+				@include font-size(14px);
+				@include transition();
+
+				&:hover {
+					//background: $gray-800;
+					//color: $gray-400;
+					color: $success;
+					//border-left-color: $success;
+				}
+
+				.icon {
+					@include font-size(16px);
+					margin-left: $gap;
+				}
+				.help-icon {
+					margin-right: $gap/2;
+					@include font-size(14px);
+				}
+
+				.text {
+					overflow: hidden;
+					max-width: 75%;
+					text-overflow: ellipsis;
+					display: block;
+					white-space: nowrap;
+				}
+
+			} // first a
+
+		} // first ul
+
+	} // .navigation
+
+} // #main-sidebar

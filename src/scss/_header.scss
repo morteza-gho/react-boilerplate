@@ -1,0 +1,232 @@
+#main-header {
+	width: 100%;
+	height: $header_height;
+	background: darken($gray-800, 5%);
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 99;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	@include media-breakpoint-down(md) {
+		height: calc(#{$header_height} - 10px);
+	}
+
+	.logo-wrapper {
+		width: $sidebar_width;
+		height: 100%;
+		background: $gray-800;
+		padding: $gap/2 0;
+
+		@include media-breakpoint-down(md) {
+			/*display: flex;
+			align-items: center;
+			padding: $gap/2;*/
+			display: none;
+		}
+
+		a {
+			display: block;
+			height: 100%;
+			text-align: center;
+
+			@include media-breakpoint-down(md) {
+				height: auto;
+			}
+		}
+
+		img {
+			width: auto;
+			height: 100%;
+
+			@include media-breakpoint-down(md) {
+				width: 100%;
+				height: auto;
+			}
+		}
+
+	} // .logo-wrapper
+
+	.header-sections {
+		display: flex;
+		justify-content: space-between;
+		width: calc(100% - #{$sidebar_width});
+		padding: 0 $gap;
+
+		@include media-breakpoint-down(md) {
+			width: 100%;
+		}
+
+		.right-header-section, .left-header-section {
+			display: flex;
+			align-items: center;
+		}
+		.center-header-section {
+			display: none;
+
+			@include media-breakpoint-down(md) {
+				display: flex;
+			}
+
+			.mobile-logo {
+				img {
+					height: 45px;
+				}
+			}
+
+		} // .center-header-section
+
+		.item {
+			margin-left: $gap*2;
+
+			@include media-breakpoint-down(md) {
+				margin-left: $gap;
+			}
+
+			&.toggle-sidebar {
+				@include media-breakpoint-down(md) {
+					margin-left: 0;
+				}
+			}
+
+		} // .item
+
+		.button-item {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 30px;
+			height: 30px;
+			background: $gray-800;
+			border: 1px solid $gray-700;
+			color: $gray-400;
+			cursor: pointer;
+			@include font-size(20px);
+			@include  border-radius($border-radius);
+			@include transition();
+
+			&:hover {
+				background: $success;
+				color: $gray-100;
+			}
+		}
+
+		.key-value-item {
+			display: flex;
+			align-items: center;
+			color: $gray-400;
+			margin-top: 2px;
+			@include font-size(12px);
+
+			.icon {
+				@include font-size(14px);
+			}
+
+			.key {
+				margin-left: $gap/2;
+			}
+			.value {
+				font-weight: 500;
+				color: $gray-200;
+			}
+		}
+
+		.user-dropdown {
+			background: $gray-800;
+			padding: $gap/2 $gap;
+			color: $gray-400;
+			cursor: pointer;
+			@include font-size(12px);
+			@include border-radius(20px);
+			@include transition();
+
+			@include media-breakpoint-down(md) {
+				display: none;
+			}
+
+			&:hover {
+				background: $success;
+				color: $gray-100;
+			}
+
+			.icon {
+				position: relative;
+				top: 1px;
+				@include font-size(17px);
+			}
+			.arrow-icon {
+				position: static;
+				@include font-size(9px);
+			}
+		} // .user-dropdown
+
+		.dropdown-menu {
+			direction: rtl;
+			text-align: right;
+			padding: 0;
+			margin-top: $gap !important;
+			left: 0;
+			top: 110%;
+
+			.dropdown-header {
+				padding-top: $gap;
+				padding-bottom: $gap;
+				color: $gray-900;
+				@include font-size(14px);
+
+				.icon {
+					vertical-align: middle;
+					@include font-size(20px);
+				}
+				.value {
+					font-weight: 600;
+					color: $success;
+					@include font-size(16px);
+				}
+
+				.mobile-items {
+					border-top: 1px solid $gray-300;
+					padding: $gap $gap*2 0 $gap*2;
+					margin-top: $gap;
+
+					@include media-breakpoint-up(sm) {
+						display: none;
+					}
+
+					.key {
+						color: $gray-600;
+						margin-left: $gap/2;
+						@include font-size(13px);
+					}
+					.value {
+						color: $gray-900;
+						@include font-size(12px);
+					}
+				}
+
+			} // .dropdown-header
+
+			li {
+				border-bottom: 1px solid $gray-200;
+
+				&:last-child {
+					border-bottom: 0;
+				}
+			}
+			.dropdown-item {
+				color: $gray-600;
+				@include font-size(12px);
+
+				&:hover {
+					background: $gray-100;
+					color: $gray-800;
+				}
+			}
+		} // .dropdown-menu
+
+	} // .header-sections
+
+} // #main-header

@@ -1,0 +1,152 @@
+
+// typography web
+.cus-display-1 {
+	font-size: 48px;
+	font-weight: 900;
+	line-height: $line-height;
+
+	@include media-breakpoint-down(md) {
+		font-size: 36px;
+	}
+}
+.cus-display-2 {
+	font-size: 44px;
+	font-weight: 900;
+	line-height: $line-height;
+
+	@include media-breakpoint-down(md) {
+		font-size: 32px;
+	}
+}
+.cus-display-3 {
+	font-size: 40px;
+	font-weight: 900;
+	line-height: $line-height;
+
+	@include media-breakpoint-down(md) {
+		font-size: 28px;
+	}
+}
+.cus-display-4 {
+	font-size: 36px;
+	font-weight: 900;
+	line-height: $line-height;
+
+	@include media-breakpoint-down(md) {
+		font-size: 24px;
+	}
+}
+
+.cus-h1 {
+	font-size: 32px;
+	font-weight: 700;
+	line-height: $line-height;
+
+	@include media-breakpoint-down(md) {
+		font-size: 22px;
+	}
+}
+.cus-h2 {
+	font-size: 28px;
+	font-weight: 700;
+	line-height: $line-height;
+
+	@include media-breakpoint-down(md) {
+		font-size: 20px;
+	}
+}
+.cus-h3 {
+	font-size: 24px;
+	font-weight: 700;
+	line-height: $line-height;
+
+	@include media-breakpoint-down(md) {
+		font-size: 18px;
+	}
+}
+.cus-h4 {
+	font-size: 20px;
+	font-weight: 700;
+	line-height: $line-height;
+
+	@include media-breakpoint-down(md) {
+		font-size: 16px;
+	}
+}
+.cus-h5 {
+	font-size: 18px;
+	font-weight: 700;
+	line-height: $line-height;
+
+	@include media-breakpoint-down(md) {
+		font-size: 15px;
+	}
+}
+.cus-h6 {
+	font-size: 16px;
+	font-weight: 700;
+	line-height: $line-height;
+
+	@include media-breakpoint-down(md) {
+		font-size: 14px;
+	}
+}
+
+.lead-1 {
+	font-size: 20px;
+	font-weight: 500;
+	line-height: $line-height;
+
+	@include media-breakpoint-down(md) {
+		font-size: 17px;
+	}
+}
+.lead-2 {
+	font-size: 18px;
+	font-weight: 500;
+	line-height: $line-height;
+
+	@include media-breakpoint-down(md) {
+		font-size: 16px;
+	}
+}
+
+.title-1 {
+	font-size: 16px;
+	font-weight: 700;
+	line-height: $line-height;
+
+	@include media-breakpoint-down(md) {
+		font-size: 15px;
+	}
+}
+
+.title-2 {
+	font-size: 14px;
+	font-weight: 700;
+	line-height: $line-height;
+}
+
+.body1 {
+	font-size: 16px;
+	font-weight: 400;
+	line-height: $line-height;
+
+	@include media-breakpoint-down(md) {
+		font-size: 15px;
+	}
+}
+.body2 {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: $line-height;
+}
+
+.small {
+	font-size: 13px;
+	font-weight: 400;
+}
+.tiny {
+	font-size: 12px;
+	font-weight: 400;
+}
